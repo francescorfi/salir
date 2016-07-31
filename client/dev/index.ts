@@ -2,9 +2,9 @@ import {disableDeprecatedForms, provideForms} from '@angular/forms';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS} from '@angular/http';
 
-import {TodoCmp} from './todo/components/todo-cmp';
+import {Salir} from './salir/components/salir';
 
-bootstrap(TodoCmp, [
+bootstrap(Salir, [
   HTTP_PROVIDERS,
   disableDeprecatedForms(),
   provideForms()
