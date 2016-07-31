@@ -1,0 +1,12 @@
+{
+  "generator-ng-fullstack": {
+    "username": "francescorfi",
+    "appName": "salir",
+    "stack": "fullstack",
+    "server": "node",
+    "client": "ng2",
+    "transpilerServer": "node",
+    "secure": false,
+    "differentStaticServer": false
+  }
+}
