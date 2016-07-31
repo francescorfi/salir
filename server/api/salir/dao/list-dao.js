@@ -2,14 +2,14 @@
 
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
-const salirSchema = require('../model/salir-model');
+const listSchema = require('../model/list-model');
 const _ = require('lodash');
 
-salirSchema.statics.getAll = () => {
+listSchema.statics.getAll = () => {
   return new Promise((resolve, reject) => {
     let _query = {};
 
-    salir
+    list
       .find(_query)
       .exec((err, todos) => {
         err ? reject(err)
@@ -18,13 +18,13 @@ salirSchema.statics.getAll = () => {
   });
 }
 
-salirSchema.statics.createNew = (salir) => {
+listSchema.statics.createNew = (list) => {
   return new Promise((resolve, reject) => {
-    if (!_.isObject(salir)) {
+    if (!_.isObject(list)) {
       return reject(new TypeError('Todo is not a valid object.'));
     }
 
-    let _something = new salir(salir);
+    let _something = new list(list);
 
     _something.save((err, saved) => {
       err ? reject(err)
@@ -33,13 +33,13 @@ salirSchema.statics.createNew = (salir) => {
   });
 }
 
-salirSchema.statics.removeById = (id) => {
+listSchema.statics.removeById = (id) => {
   return new Promise((resolve, reject) => {
     if (!_.isString(id)) {
       return reject(new TypeError('Id is not a valid string.'));
     }
 
-    salir
+    list
       .findByIdAndRemove(id)
       .exec((err, deleted) => {
         err ? reject(err)
@@ -48,6 +48,6 @@ salirSchema.statics.removeById = (id) => {
   });
 }
 
-const salir = mongoose.model('salir', salirSchema);
+const list = mongoose.model('list', listSchema);
 
-module.exports = salir;
+module.exports = list;

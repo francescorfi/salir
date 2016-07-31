@@ -2,9 +2,9 @@
 
 const mongoose = require('mongoose');
 
-const _salirSchema = {
+const _userSchema = {
   somethingSomething: {type: String, required: true, trim: true},
   createdAt: {type: Date, default: Date.now}
 }
 
-module.exports = mongoose.Schema(_salirSchema);
+module.exports = mongoose.Schema(_userSchema);

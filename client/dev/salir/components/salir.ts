@@ -1,6 +1,7 @@
 import {
   Component,
-  Inject
+  Inject,
+  OnInit
 } from '@angular/core';
 
 @Component({
@@ -8,6 +9,7 @@ import {
   templateUrl: 'salir/templates/salir.html',
   styleUrls: ['salir/styles/salir.css']
 })
-export class Salir {
+export class Salir implements OnInit {
+  title: string = `Salir app`;
   name: string = `yo, I'm your component :D`;
 }

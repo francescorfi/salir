@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Salir = (function () {
     function Salir() {
+        this.title = "Salir app";
         this.name = "yo, I'm your component :D";
     }
     Salir = __decorate([

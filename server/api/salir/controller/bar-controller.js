@@ -1,28 +1,28 @@
 "use strict";
 
-const salir = require('../dao/salir-dao');
+const bar = require('../dao/bar-dao');
 
-module.exports = class salirController {
+module.exports = class barController {
   static getAll(req, res) {
-    salirDAO
+    barDAO
       .getAll()
-      .then(salir => res.status(200).json(salirs))
+      .then(bar => res.status(200).json(bars))
       .catch(error => res.status(400).json(error));
   }
 
   static createNew(req, res) {
-    let _salir = req.body;
+    let _bar = req.body;
 
-    salirDAO
-      .createNew(_salir)
-      .then(salir => res.status(201).json(salir))
+    barDAO
+      .createNew(_bar)
+      .then(bar => res.status(201).json(bar))
       .catch(error => res.status(400).json(error));
   }
 
   static removeById(req, res) {
     let _id = req.params.id;
 
-    salirDAO
+    barDAO
       .removeById(_id)
       .then(() => res.status(200).end())
       .catch(error => res.status(400).json(error));
